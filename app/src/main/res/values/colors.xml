@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Day Colors  -->
+    <color name="day_primary">#b0bec5</color>
+    <color name="day_primary_light">#e2f1f8</color>
+    <color name="day_primary_dark">#808e95</color>
+    <color name="day_secondary">#263238</color>
+    <color name="day_secondary_light">#4f5b62</color>
+    <color name="day_secondary_dark">#000a12</color>
+    <color name="day_text_on_primary">#000000</color>
+    <color name="day_text_on_secondary">#ffffff</color>
+
+    <!--    Night Colors  -->
+    <color name="night_primary">#212121</color>
+    <color name="night_primary_light">#484848</color>
+    <color name="night_primary_dark">#000000</color>
+    <color name="night_secondary">#eeeeee</color>
+    <color name="night_secondary_light">#ffffff</color>
+    <color name="night_secondary_dark">#bcbcbc</color>
+    <color name="night_text_on_primary">#ffffff</color>
+    <color name="night_text_on_secondary">#000000</color>
+</resources>
