@@ -1,23 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.GithubApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.GithubApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/day_primary</item>
-        <item name="colorPrimaryVariant">@color/day_primary_dark</item>
-        <item name="colorOnPrimary">@color/day_primary_light</item>
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryVariant">@color/gray_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/day_secondary</item>
-        <item name="colorSecondaryVariant">@color/day_secondary_dark</item>
-        <item name="colorOnSecondary">@color/day_secondary_light</item>
+        <item name="colorSecondary">@color/orange_light</item>
+        <item name="colorSecondaryVariant">@color/orange_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
-        <item name="android:textColorPrimary">@color/day_text_on_primary</item>
-        <item name="android:textColorSecondary">@color/day_text_on_secondary</item>
-        <item name="android:windowBackground">@color/day_text_on_secondary</item>
     </style>
 </resources>
