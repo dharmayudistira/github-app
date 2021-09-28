@@ -66,6 +66,9 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    // android veil
+    //android veil
     implementation "com.github.skydoves:androidveil:$veil_version"
+
+    //circle image
+    implementation "de.hdodenhof:circleimageview:$circle_image_version"
 }

@@ -12,6 +12,12 @@ import com.pandecode.githubapp.utils.loadAsCircle
 class SearchUserAdapter :
     ListAdapter<SearchUserItem, SearchUserAdapter.ViewHolder>(SearchUserDiffCallback()) {
 
+    private lateinit var onSearchClickCallback: OnSearchClickCallback
+
+    fun setOnSearchClickCallback(onSearchClickCallback: OnSearchClickCallback) {
+        this.onSearchClickCallback = onSearchClickCallback
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,21 +28,29 @@ class SearchUserAdapter :
 
     override fun onBindViewHolder(holder: SearchUserAdapter.ViewHolder, position: Int) {
         val user = getItem(position) as SearchUserItem
-        holder.bind(user)
+        holder.bind(user, onSearchClickCallback)
     }
 
     inner class ViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: SearchUserItem) {
+        fun bind(user: SearchUserItem, callback: OnSearchClickCallback) {
 
             binding.apply {
                 ivUserAvatarItem.loadAsCircle(user.avatarUrl)
                 tvUserLoginItem.text = user.login
+
+                root.setOnClickListener {
+                    onSearchClickCallback.onItemSearchClick(user)
+                }
             }
 
         }
 
+    }
+
+    interface OnSearchClickCallback {
+        fun onItemSearchClick(searchUserItem: SearchUserItem)
     }
 
 }

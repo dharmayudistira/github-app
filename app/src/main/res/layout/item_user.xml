@@ -30,12 +30,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/medium_spacing"
-            android:layout_marginEnd="@dimen/medium_spacing"
+            android:layout_marginEnd="@dimen/small_spacing"
             app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar_item"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
             app:layout_constraintStart_toEndOf="@+id/iv_user_avatar_item"
             app:layout_constraintTop_toTopOf="@+id/iv_user_avatar_item"
             tools:text="dharmayudistira" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_spacing"
+            android:contentDescription="@string/this_is_image"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_user_login_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_user_login_item"
+            app:srcCompat="@drawable/ic_arrow_right" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

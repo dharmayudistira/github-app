@@ -5,4 +5,7 @@
     <string name="author_email">dharmayudistira2000@gmail.com</string>
     <string name="author_name">Dharma Yudistira Eka Putra</string>
     <string name="this_is_image">this is image</string>
+    <string name="query_hints">Search username</string>
+    <string name="empty_search_message">No results for %s, try another username</string>
+    <string name="call_to_search_message">There are no data yet. Let\'s find some user</string>
 </resources>

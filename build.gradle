@@ -18,6 +18,7 @@ buildscript {
         lottie_version = "4.1.0"
         koin_version = "2.2.2"
         veil_version = "1.1.1"
+        circle_image_version = "3.1.0"
 
         //additional libraries for module: data
         room_version = "2.3.0"
