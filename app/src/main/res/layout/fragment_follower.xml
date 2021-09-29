@@ -4,31 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/medium_spacing"
-        android:layout_marginTop="@dimen/medium_spacing"
-        android:layout_marginEnd="@dimen/medium_spacing"
-        app:cardCornerRadius="@dimen/small_spacing"
-        app:cardElevation="@dimen/small_spacing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_user_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.card.MaterialCardView>
+    tools:context=".ui.detail.fragment.follower.FollowerFragment">
 
     <com.skydoves.androidveil.VeilRecyclerFrameView
-        android:id="@+id/rv_user_home"
+        android:id="@+id/rv_user_follower"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/small_spacing"
@@ -36,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        app:layout_constraintTop_toTopOf="parent"
         app:veilFrame_layout="@layout/item_search"
         app:veilFrame_radius="@dimen/small_spacing" />
 
@@ -48,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

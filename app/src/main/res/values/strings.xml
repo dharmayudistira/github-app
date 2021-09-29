@@ -7,5 +7,16 @@
     <string name="this_is_image">this is image</string>
     <string name="query_hints">Search username</string>
     <string name="empty_search_message">No results for %s, try another username</string>
+    <string name="empty_data_message">No data found</string>
     <string name="call_to_search_message">There are no data yet. Let\'s find some user</string>
+    <string name="author_login">dharmayudistira</string>
+    <string name="author_location">Malang</string>
+    <string name="author_company">Google Indonesia</string>
+    <string name="null_location_message">location not set yet</string>
+    <string name="null_company_message">company not set yet</string>
+    <string name="null_name_message">name not set yet</string>
+    <string name="repositories">Repository</string>
+    <string name="dummy_number">99</string>
+    <string name="following">Following</string>
+    <string name="follower">Follower</string>
 </resources>

@@ -119,14 +119,15 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
         val username = binding?.searchUserHome?.query?.toString()
         val message = String.format(resources.getString(R.string.empty_search_message), username)
 
-        if (state) {
-            binding?.rvUserHome?.visibility = View.GONE
-
-            binding?.layoutEmpty?.tvMessageEmpty?.text = message
-            binding?.layoutEmpty?.root?.visibility = View.VISIBLE
-        } else {
-            binding?.rvUserHome?.visibility = View.VISIBLE
-            binding?.layoutEmpty?.root?.visibility = View.GONE
+        binding?.apply {
+            if (state) {
+                rvUserHome.visibility = View.GONE
+                layoutEmpty.tvMessageEmpty.text = message
+                layoutEmpty.root.visibility = View.VISIBLE
+            } else {
+                rvUserHome.visibility = View.VISIBLE
+                layoutEmpty.root.visibility = View.GONE
+            }
         }
     }
 

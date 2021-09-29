@@ -1,6 +1,8 @@
 package com.pandecode.data.utils
 
+import com.pandecode.data.domain.model.DetailUser
 import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.data.source.remote.response.detail.DetailUserResponse
 import com.pandecode.data.source.remote.response.search.SearchUserItemResponse
 
 object DataMapper {
@@ -14,4 +16,16 @@ object DataMapper {
             )
         }
 
+    fun mapDetailResponseToDomain(input: DetailUserResponse) =
+        DetailUser(
+            login = input.login,
+            company = input.company,
+            id = input.id,
+            publicRepos = input.publicRepos,
+            followers = input.followers,
+            avatarUrl = input.avatarUrl,
+            following = input.following,
+            name = input.name,
+            location = input.location
+        )
 }

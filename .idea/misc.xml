@@ -5,15 +5,22 @@
       <map>
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/background_menu_round_padded.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_company.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_location.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_verified.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/menu_background_color_state.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/nav_drawer_selector.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/activity_detail_user.xml" value="0.14673913043478262" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_favorite.xml" value="0.14673913043478262" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_follower.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_following.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_home.xml" value="0.12" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_repository.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/item_user.xml" value="0.22" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_app_bar_detail.xml" value="0.2" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_app_bar_main.xml" value="0.14673913043478262" />
-        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_empty_search.xml" value="0.25" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_empty_search.xml" value="0.1" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_header_drawer_main.xml" value="0.22" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/menu/menu_drawer_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/menu/menu_main.xml" value="0.22447916666666667" />

@@ -1,6 +1,5 @@
-package com.pandecode.githubapp.ui.home
+package com.pandecode.githubapp.ui.detail.fragment.following
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,15 +10,15 @@ import com.pandecode.data.source.Resource
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val useCase: GithubUseCase) : ViewModel() {
+class FollowingViewModel(private val useCase: GithubUseCase) : ViewModel() {
 
-    private val _data = MutableLiveData<Resource<List<SearchUserItem>>>()
-    var data: LiveData<Resource<List<SearchUserItem>>> = _data
+    private val _dataFollowing = MutableLiveData<Resource<List<SearchUserItem>>>()
+    val dataFollowing : LiveData<Resource<List<SearchUserItem>>> = _dataFollowing
 
-    fun searchUser(username: String) {
+    fun getFollowing(username: String) {
         viewModelScope.launch {
-            useCase.getSearchUser(username).collect {
-                _data.postValue(it)
+            useCase.getFollowing(username).collect {
+                _dataFollowing.postValue(it)
             }
         }
     }
