@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.githubapp.databinding.ItemSearchBinding
 import com.pandecode.githubapp.databinding.ItemUserBinding
 import com.pandecode.githubapp.utils.SearchUserDiffCallback
 import com.pandecode.githubapp.utils.loadAsCircle
@@ -22,7 +23,7 @@ class SearchUserAdapter :
         parent: ViewGroup,
         viewType: Int
     ): SearchUserAdapter.ViewHolder {
-        val view = ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = ItemSearchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
@@ -31,7 +32,7 @@ class SearchUserAdapter :
         holder.bind(user)
     }
 
-    inner class ViewHolder(private val binding: ItemUserBinding) :
+    inner class ViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: SearchUserItem) {

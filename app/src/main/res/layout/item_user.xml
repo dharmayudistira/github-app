@@ -29,6 +29,7 @@
             android:id="@+id/tv_user_login_item"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/TextContent"
             android:layout_marginStart="@dimen/medium_spacing"
             android:layout_marginEnd="@dimen/small_spacing"
             app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar_item"

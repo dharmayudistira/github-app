@@ -49,8 +49,9 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
     }
 
     private fun setupAdapter() {
-        searchAdapter = SearchUserAdapter()
-        searchAdapter.setOnSearchClickCallback(this)
+        searchAdapter = SearchUserAdapter().also {
+            it.setOnSearchClickCallback(this)
+        }
 
         binding?.rvUserHome?.apply {
             setAdapter(searchAdapter)
