@@ -3,6 +3,7 @@ package com.pandecode.githubapp.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.navigation.navArgs
 import com.google.android.material.appbar.AppBarLayout
@@ -36,6 +37,8 @@ class DetailUserActivity : AppCompatActivity() {
         binding = ActivityDetailUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarDetail.toolbarDetail)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         collapsingToolbarListener(args.selectedUser)
         setupTabLayout()
@@ -121,5 +124,13 @@ class DetailUserActivity : AppCompatActivity() {
         } else {
             binding.appBarDetail.veilInformationDetail.unVeil()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return false
     }
 }
