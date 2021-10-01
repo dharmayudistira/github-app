@@ -1,10 +1,9 @@
 package com.pandecode.githubapp.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -21,16 +20,6 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailUserBinding
     private val args: DetailUserActivityArgs by navArgs()
     private val viewModel: DetailViewModel by viewModel()
-
-    companion object {
-
-        @StringRes
-        private val TAB_TITLES = intArrayOf(
-            R.string.following,
-            R.string.follower
-        )
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,13 +43,13 @@ class DetailUserActivity : AppCompatActivity() {
         var isShow = true
         var scrollRange = -1
         binding.appBarDetail.appBarDetailLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { barLayout, verticalOffset ->
-            if (scrollRange == -1){
+            if (scrollRange == -1) {
                 scrollRange = barLayout?.totalScrollRange ?: 1
             }
-            if (scrollRange + verticalOffset == 0){
+            if (scrollRange + verticalOffset == 0) {
                 binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
                 isShow = true
-            } else if (isShow){
+            } else if (isShow) {
                 binding.appBarDetail.collapsingToolbarDetail.title = " "
                 isShow = false
             }
@@ -83,19 +72,15 @@ class DetailUserActivity : AppCompatActivity() {
         viewModel.data.observe(this, {
             when (it) {
                 Resource.Empty -> {
-                    Log.d("DetailViewModel", "EMPTY")
                     showLoading(false)
                 }
                 is Resource.Error -> {
-                    Log.d("DetailViewModel", "ERROR : ${it.errorMessage}")
                     showLoading(false)
                 }
                 Resource.Loading -> {
-                    Log.d("DetailViewModel", "LOADING")
                     showLoading(true)
                 }
                 is Resource.Success -> {
-                    Log.d("DetailViewModel", "SUCCESS")
                     setupUI(it.data)
                     showLoading(false)
                 }
@@ -106,7 +91,8 @@ class DetailUserActivity : AppCompatActivity() {
     private fun setupUI(data: DetailUser) {
         binding.apply {
             appBarDetail.ivUserAvatarDetail.loadAsCircle(data.avatarUrl)
-            appBarDetail.tvUserNameDetail.text = data.name ?: resources.getString(R.string.null_name_message)
+            appBarDetail.tvUserNameDetail.text =
+                data.name ?: resources.getString(R.string.null_name_message)
             appBarDetail.tvUserLoginDetail.text = data.login
             appBarDetail.tvUserLocationDetail.text =
                 data.location ?: resources.getString(R.string.null_location_message)
@@ -132,5 +118,15 @@ class DetailUserActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+
+    companion object {
+
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.following,
+            R.string.follower
+        )
+
     }
 }

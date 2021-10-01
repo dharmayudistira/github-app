@@ -1,6 +1,5 @@
 package com.pandecode.data.domain.model
 
-
 data class DetailUser(
     val login: String,
     val company: String?,

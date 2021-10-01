@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pandecode.data.domain.model.SearchUserItem
 import com.pandecode.githubapp.databinding.ItemSearchBinding
-import com.pandecode.githubapp.databinding.ItemUserBinding
 import com.pandecode.githubapp.utils.SearchUserDiffCallback
 import com.pandecode.githubapp.utils.loadAsCircle
 

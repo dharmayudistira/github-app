@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:veilFrame_layout="@layout/item_search"
+        app:veilFrame_layout="@layout/item_user"
         app:veilFrame_radius="@dimen/small_spacing" />
 
     <include

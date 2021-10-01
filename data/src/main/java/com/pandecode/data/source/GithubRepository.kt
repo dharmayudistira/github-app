@@ -6,7 +6,6 @@ import com.pandecode.data.utils.DataMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import java.lang.Exception
 
 class GithubRepository(private val remoteDataSource: RemoteDataSource) : IGithubRepository {
     override suspend fun getSearchUser(username: String) = flow {

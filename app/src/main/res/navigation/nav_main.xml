@@ -9,21 +9,17 @@
         android:id="@+id/homeFragment"
         android:name="com.pandecode.githubapp.ui.home.HomeFragment"
         android:label="@string/home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailUserActivity"
             app:destination="@id/detailUserActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.pandecode.githubapp.ui.favorite.FavoriteFragment"
-        android:label="@string/favorite"
-        tools:layout="@layout/fragment_favorite" />
+
     <activity
         android:id="@+id/detailUserActivity"
         android:name="com.pandecode.githubapp.ui.detail.DetailUserActivity"
         android:label="activity_detail_user"
-        tools:layout="@layout/activity_detail_user" >
+        tools:layout="@layout/activity_detail_user">
         <argument
             android:name="selectedUser"
             app:argType="string" />

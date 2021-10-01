@@ -1,18 +1,15 @@
 package com.pandecode.githubapp.ui.detail.fragment.following
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.UserAdapter
 import com.pandecode.githubapp.databinding.FragmentFollowingBinding
-import com.pandecode.githubapp.ui.detail.DetailViewModel
-import com.pandecode.githubapp.ui.detail.fragment.follower.FollowerFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class FollowingFragment : Fragment() {
@@ -23,19 +20,6 @@ class FollowingFragment : Fragment() {
     private val viewModel: FollowingViewModel by viewModel()
 
     private lateinit var userAdapter: UserAdapter
-
-    companion object {
-        private const val ARG_USERNAME = "username"
-
-        @JvmStatic
-        fun newInstance(username: String) =
-            FollowingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_USERNAME, username)
-                }
-            }
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -75,24 +59,18 @@ class FollowingFragment : Fragment() {
         viewModel.dataFollowing.observe(requireActivity(), {
             when (it) {
                 Resource.Empty -> {
-                    Log.d("DetailViewModel", "FOLLOWING EMPTY")
                     showLoading(false)
                     showEmpty(true)
                 }
                 is Resource.Error -> {
-                    Log.d("DetailViewModel", "FOLLOWING ERROR")
-
                     showLoading(false)
                     showEmpty(true)
                 }
                 Resource.Loading -> {
-                    Log.d("DetailViewModel", "FOLLOWING LOADING")
-
                     showLoading(true)
                     showEmpty(false)
                 }
                 is Resource.Success -> {
-                    Log.d("DetailViewModel", "FOLLOWING SUCCESS")
                     userAdapter.submitList(it.data)
 
                     showLoading(false)
@@ -125,5 +103,18 @@ class FollowingFragment : Fragment() {
                 layoutEmpty.root.visibility = View.GONE
             }
         }
+    }
+
+    companion object {
+        private const val ARG_USERNAME = "username"
+
+        @JvmStatic
+        fun newInstance(username: String) =
+            FollowingFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_USERNAME, username)
+                }
+            }
+
     }
 }

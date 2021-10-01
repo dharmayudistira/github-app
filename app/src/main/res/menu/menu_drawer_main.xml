@@ -7,10 +7,6 @@
             android:id="@id/homeFragment"
             android:title="@string/home" />
 
-        <item
-            android:id="@id/favoriteFragment"
-            android:title="@string/favorite"/>
-
     </group>
 
 </menu>

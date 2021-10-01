@@ -17,16 +17,16 @@ interface GithubApiService {
     @GET("users/{login}")
     suspend fun getDetailUser(
         @Path("login") login: String
-    ) : DetailUserResponse
+    ): DetailUserResponse
 
     @GET("users/{login}/followers")
     suspend fun getFollower(
         @Path("login") login: String
-    ) : List<SearchUserItemResponse>
+    ): List<SearchUserItemResponse>
 
     @GET("users/{login}/following")
     suspend fun getFollowing(
         @Path("login") login: String
-    ) : List<SearchUserItemResponse>
+    ): List<SearchUserItemResponse>
 
 }

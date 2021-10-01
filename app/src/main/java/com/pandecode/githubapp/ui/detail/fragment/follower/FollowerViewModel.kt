@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class FollowerViewModel(private val useCase: GithubUseCase) : ViewModel() {
     private val _dataFollower = MutableLiveData<Resource<List<SearchUserItem>>>()
-    val dataFollower : LiveData<Resource<List<SearchUserItem>>> = _dataFollower
+    val dataFollower: LiveData<Resource<List<SearchUserItem>>> = _dataFollower
 
     fun getFollower(username: String) {
         viewModelScope.launch {

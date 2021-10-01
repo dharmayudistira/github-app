@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/header_drawer_height">
 
@@ -9,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="?attr/colorPrimary"
-        android:contentDescription="@string/this_is_image"/>
+        android:contentDescription="@string/this_is_image" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
@@ -17,7 +16,7 @@
         app:lottie_rawRes="@raw/wave_animation"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/textView2"
