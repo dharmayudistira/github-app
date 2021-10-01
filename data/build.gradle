@@ -20,6 +20,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         buildConfigField("String", "GITHUB_TOKEN", localProperties["GITHUB_API_KEY"])
+        buildConfigField("String", "BASE_URL", '"https://api.github.com/"')
     }
 
     buildTypes {

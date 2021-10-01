@@ -43,15 +43,20 @@ class DetailUserActivity : AppCompatActivity() {
         var isShow = true
         var scrollRange = -1
         binding.appBarDetail.appBarDetailLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { barLayout, verticalOffset ->
-            if (scrollRange == -1) {
-                scrollRange = barLayout?.totalScrollRange ?: 1
-            }
-            if (scrollRange + verticalOffset == 0) {
-                binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
-                isShow = true
-            } else if (isShow) {
-                binding.appBarDetail.collapsingToolbarDetail.title = " "
-                isShow = false
+            when {
+                scrollRange == -1 -> {
+                    scrollRange = barLayout?.totalScrollRange ?: 1
+                }
+
+                scrollRange + verticalOffset == 0 -> {
+                    binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
+                    isShow = true
+                }
+
+                isShow -> {
+                    binding.appBarDetail.collapsingToolbarDetail.title = " "
+                    isShow = false
+                }
             }
         })
     }
@@ -89,18 +94,15 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun setupUI(data: DetailUser) {
-        binding.apply {
-            appBarDetail.ivUserAvatarDetail.loadAsCircle(data.avatarUrl)
-            appBarDetail.tvUserNameDetail.text =
-                data.name ?: resources.getString(R.string.null_name_message)
-            appBarDetail.tvUserLoginDetail.text = data.login
-            appBarDetail.tvUserLocationDetail.text =
-                data.location ?: resources.getString(R.string.null_location_message)
-            appBarDetail.tvUserCompanyDetail.text =
-                data.company ?: resources.getString(R.string.null_company_message)
-            appBarDetail.tvUserRepositoriesDetail.text = data.publicRepos.toString()
-            appBarDetail.tvUserFollowingDetail.text = data.following.toString()
-            appBarDetail.tvUserFollowerDetail.text = data.followers.toString()
+        binding.appBarDetail.apply {
+            ivUserAvatarDetail.loadAsCircle(data.avatarUrl)
+            tvUserNameDetail.text = data.name ?: resources.getString(R.string.null_name_message)
+            tvUserLoginDetail.text = data.login
+            tvUserLocationDetail.text = data.location ?: resources.getString(R.string.null_location_message)
+            tvUserCompanyDetail.text = data.company ?: resources.getString(R.string.null_company_message)
+            tvUserRepositoriesDetail.text = data.publicRepos.toString()
+            tvUserFollowingDetail.text = data.following.toString()
+            tvUserFollowerDetail.text = data.followers.toString()
         }
     }
 

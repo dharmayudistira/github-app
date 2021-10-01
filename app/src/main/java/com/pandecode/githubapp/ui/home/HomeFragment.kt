@@ -63,11 +63,11 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
     private fun setupSearchView() {
         val manager = requireActivity().getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
-        binding?.apply {
-            searchUserHome.setSearchableInfo(manager.getSearchableInfo(requireActivity().componentName))
-            searchUserHome.queryHint = resources.getString(R.string.query_hints)
+        binding?.searchUserHome?.apply {
+            setSearchableInfo(manager.getSearchableInfo(requireActivity().componentName))
+            queryHint = resources.getString(R.string.query_hints)
 
-            searchUserHome.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     if (!query.isNullOrEmpty()) {
                         viewModel.searchUser(query)
@@ -79,7 +79,6 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
                 override fun onQueryTextChange(newText: String?): Boolean {
                     return false
                 }
-
             })
         }
     }

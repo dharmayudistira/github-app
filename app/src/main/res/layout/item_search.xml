@@ -33,13 +33,13 @@
             android:layout_marginStart="@dimen/medium_spacing"
             android:layout_marginEnd="@dimen/small_spacing"
             app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar_item"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/image_view"
             app:layout_constraintStart_toEndOf="@+id/iv_user_avatar_item"
             app:layout_constraintTop_toTopOf="@+id/iv_user_avatar_item"
             tools:text="dharmayudistira" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/medium_spacing"
