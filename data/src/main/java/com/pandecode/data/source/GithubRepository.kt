@@ -1,9 +1,11 @@
 package com.pandecode.data.source
 
+import com.pandecode.data.domain.model.Repository
 import com.pandecode.data.domain.repository.IGithubRepository
 import com.pandecode.data.source.remote.RemoteDataSource
 import com.pandecode.data.utils.DataMapper
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -71,6 +73,24 @@ class GithubRepository(private val remoteDataSource: RemoteDataSource) : IGithub
             }
 
         } catch (e: Exception) {
+            emit(Resource.Error(e.message ?: "Something went wrong"))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    override suspend fun getRepository(username: String) = flow {
+        emit(Resource.Loading)
+
+        try {
+            val data = remoteDataSource.getRepository(username)
+
+            if(data.isNotEmpty()) {
+                val domain = DataMapper.mapRepositoryResponseToDomain(data)
+                emit(Resource.Success(domain))
+            }else {
+                emit(Resource.Empty)
+            }
+
+        }catch (e: java.lang.Exception) {
             emit(Resource.Error(e.message ?: "Something went wrong"))
         }
     }.flowOn(Dispatchers.IO)

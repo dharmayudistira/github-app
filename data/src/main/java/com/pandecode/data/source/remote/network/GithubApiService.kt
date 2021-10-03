@@ -1,6 +1,7 @@
 package com.pandecode.data.source.remote.network
 
 import com.pandecode.data.source.remote.response.detail.DetailUserResponse
+import com.pandecode.data.source.remote.response.repository.RepositoryResponse
 import com.pandecode.data.source.remote.response.search.SearchUserItemResponse
 import com.pandecode.data.source.remote.response.search.SearchUserResponse
 import retrofit2.http.GET
@@ -28,5 +29,10 @@ interface GithubApiService {
     suspend fun getFollowing(
         @Path("login") login: String
     ): List<SearchUserItemResponse>
+
+    @GET("users/{login}/repos")
+    suspend fun getRepository(
+        @Path("login") login: String
+    ) : List<RepositoryResponse>
 
 }

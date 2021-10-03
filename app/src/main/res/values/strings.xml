@@ -18,4 +18,8 @@
     <string name="dummy_number">99</string>
     <string name="following">Following</string>
     <string name="follower">Follower</string>
+    <string name="author_repository_full_name">dharmayudistira/dharmayudistira</string>
+    <string name="dummy_language">Kotlin</string>
+    <string name="no_description_message">No description</string>
+    <string name="unknown_language_message">Unknown language</string>
 </resources>

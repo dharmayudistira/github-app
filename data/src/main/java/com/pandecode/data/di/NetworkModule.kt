@@ -21,7 +21,7 @@ val networkModule = module {
             .addInterceptor(loggingInterceptor)
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
-                    .addHeader("Authorization", BuildConfig.GITHUB_TOKEN)
+                    .addHeader("Authorization", "token ${BuildConfig.GITHUB_TOKEN}")
                     .build()
                 chain.proceed(request)
             }

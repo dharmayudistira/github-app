@@ -7,6 +7,7 @@
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/background_menu_round_padded.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_company.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_location.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_repository.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/ic_verified.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/menu_background_color_state.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/drawable/nav_drawer_selector.xml" value="0.19074074074074074" />
@@ -18,6 +19,7 @@
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_following.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_home.xml" value="0.12" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/fragment_repository.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/item_repository.xml" value="0.25" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/item_search.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/item_user.xml" value="0.22" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_app_bar_detail.xml" value="0.33" />

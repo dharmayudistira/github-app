@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.fragment.follower.FollowerFragment">
+    tools:context=".ui.detail.fragment.repository.RepositoryFragment">
 
     <com.skydoves.androidveil.VeilRecyclerFrameView
-        android:id="@+id/rv_user_follower"
+        android:id="@+id/rv_user_repository"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/small_spacing"
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:veilFrame_layout="@layout/item_user"
+        app:veilFrame_layout="@layout/item_repository"
         app:veilFrame_radius="@dimen/small_spacing" />
 
     <include

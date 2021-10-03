@@ -1,8 +1,10 @@
 package com.pandecode.data.utils
 
 import com.pandecode.data.domain.model.DetailUser
+import com.pandecode.data.domain.model.Repository
 import com.pandecode.data.domain.model.SearchUserItem
 import com.pandecode.data.source.remote.response.detail.DetailUserResponse
+import com.pandecode.data.source.remote.response.repository.RepositoryResponse
 import com.pandecode.data.source.remote.response.search.SearchUserItemResponse
 
 object DataMapper {
@@ -28,4 +30,17 @@ object DataMapper {
             name = input.name,
             location = input.location
         )
+
+    fun mapRepositoryResponseToDomain(input: List<RepositoryResponse>) =
+        input.map {
+            Repository(
+                stargazersCount = it.stargazersCount,
+                language = it.language,
+                id = it.id,
+                fullName = it.fullName,
+                name = it.name,
+                description = it.description,
+                forksCount = it.forksCount
+            )
+        }
 }

@@ -126,6 +126,7 @@ class DetailUserActivity : AppCompatActivity() {
 
         @StringRes
         private val TAB_TITLES = intArrayOf(
+            R.string.repositories,
             R.string.following,
             R.string.follower
         )
