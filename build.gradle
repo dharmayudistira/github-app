@@ -13,7 +13,7 @@ buildscript {
 
         //additional libraries for module: app
         nav_version = "2.3.5"
-        glide_version = "4.12.0"
+        coil_version = "1.3.2"
         viewpager2_version = "1.0.0"
         lottie_version = "4.1.0"
         koin_version = "2.2.2"
