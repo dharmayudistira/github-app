@@ -8,22 +8,29 @@ import androidx.navigation.navArgs
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.pandecode.data.domain.model.DetailUser
+import com.pandecode.data.domain.model.User
 import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.DetailPagerAdapter
 import com.pandecode.githubapp.databinding.ActivityDetailUserBinding
 import com.pandecode.githubapp.utils.loadAsCircle
+import com.pandecode.githubapp.utils.setIconFromDrawableId
+import com.pandecode.githubapp.utils.showSnackbarMessage
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailUserActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailUserBinding
+    private val binding: ActivityDetailUserBinding by lazy {
+        ActivityDetailUserBinding.inflate(layoutInflater)
+    }
+
     private val args: DetailUserActivityArgs by navArgs()
     private val viewModel: DetailViewModel by viewModel()
 
+    private var isFavorite = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarDetail.toolbarDetail)
 
@@ -34,6 +41,7 @@ class DetailUserActivity : AppCompatActivity() {
 
         args.selectedUser.apply {
             viewModel.getDetailUser(this)
+            viewModel.checkFavorite(this)
         }
 
         observeData()
@@ -74,6 +82,18 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
+        viewModel.isFavorite.observe(this, {
+            isFavorite = it
+
+            binding.fabFavoriteDetail.apply {
+                if(isFavorite) {
+                    this.setIconFromDrawableId(R.drawable.ic_favorite_on)
+                }else {
+                    this.setIconFromDrawableId(R.drawable.ic_favorite_off)
+                }
+            }
+        })
+
         viewModel.data.observe(this, {
             when (it) {
                 Resource.Empty -> {
@@ -103,6 +123,22 @@ class DetailUserActivity : AppCompatActivity() {
             tvUserRepositoriesDetail.text = data.publicRepos.toString()
             tvUserFollowingDetail.text = data.following.toString()
             tvUserFollowerDetail.text = data.followers.toString()
+        }
+
+        binding.fabFavoriteDetail.setOnClickListener {
+            val user = User(
+                id = data.id,
+                avatarUrl = data.avatarUrl,
+                login = data.login
+            )
+
+            if (isFavorite) {
+                it.showSnackbarMessage(resources.getString(R.string.remove_favorite_message))
+                viewModel.deleteFromDatabase(user)
+            }else {
+                it.showSnackbarMessage(resources.getString(R.string.add_favorite_message))
+                viewModel.insertToDatabase(user)
+            }
         }
     }
 

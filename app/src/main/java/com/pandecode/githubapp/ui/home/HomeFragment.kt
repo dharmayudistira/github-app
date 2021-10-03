@@ -10,7 +10,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.data.domain.model.User
 import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.SearchUserAdapter
@@ -131,7 +131,7 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
         }
     }
 
-    override fun onItemSearchClick(searchUserItem: SearchUserItem) {
+    override fun onItemSearchClick(searchUserItem: User) {
         val action =
             HomeFragmentDirections.actionHomeFragmentToDetailUserActivity(searchUserItem.login)
         findNavController().navigate(action)

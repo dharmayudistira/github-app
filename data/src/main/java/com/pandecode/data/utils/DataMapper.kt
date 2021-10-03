@@ -2,16 +2,17 @@ package com.pandecode.data.utils
 
 import com.pandecode.data.domain.model.DetailUser
 import com.pandecode.data.domain.model.Repository
-import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.data.domain.model.User
+import com.pandecode.data.source.local.database.UserEntity
 import com.pandecode.data.source.remote.response.detail.DetailUserResponse
 import com.pandecode.data.source.remote.response.repository.RepositoryResponse
 import com.pandecode.data.source.remote.response.search.SearchUserItemResponse
 
 object DataMapper {
 
-    fun mapSearchResponseToDomain(input: List<SearchUserItemResponse>) =
+    fun mapUserResponseToDomain(input: List<SearchUserItemResponse>) =
         input.map {
-            SearchUserItem(
+            User(
                 id = it.id,
                 avatarUrl = it.avatarUrl,
                 login = it.login
@@ -43,4 +44,19 @@ object DataMapper {
                 forksCount = it.forksCount
             )
         }
+
+    fun mapUserEntityToUserDomain(input: List<UserEntity>) =
+        input.map {
+            User(
+                id = it.id,
+                login = it.username,
+                avatarUrl = it.avatarUrl
+            )
+        }
+
+    fun mapUserDomainToEntity(input: User) = UserEntity(
+        id = input.id,
+        username = input.login,
+        avatarUrl = input.avatarUrl
+    )
 }

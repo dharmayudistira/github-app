@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.data.domain.model.User
 import com.pandecode.githubapp.databinding.ItemSearchBinding
 import com.pandecode.githubapp.utils.SearchUserDiffCallback
 import com.pandecode.githubapp.utils.loadAsCircle
 
 class SearchUserAdapter :
-    ListAdapter<SearchUserItem, SearchUserAdapter.ViewHolder>(SearchUserDiffCallback()) {
+    ListAdapter<User, SearchUserAdapter.ViewHolder>(SearchUserDiffCallback()) {
 
     private lateinit var onSearchClickCallback: OnSearchClickCallback
 
@@ -27,14 +27,14 @@ class SearchUserAdapter :
     }
 
     override fun onBindViewHolder(holder: SearchUserAdapter.ViewHolder, position: Int) {
-        val user = getItem(position) as SearchUserItem
+        val user = getItem(position) as User
         holder.bind(user)
     }
 
     inner class ViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: SearchUserItem) {
+        fun bind(user: User) {
 
             binding.apply {
                 ivUserAvatarItem.loadAsCircle(user.avatarUrl)
@@ -50,7 +50,7 @@ class SearchUserAdapter :
     }
 
     interface OnSearchClickCallback {
-        fun onItemSearchClick(searchUserItem: SearchUserItem)
+        fun onItemSearchClick(searchUserItem: User)
     }
 
 }

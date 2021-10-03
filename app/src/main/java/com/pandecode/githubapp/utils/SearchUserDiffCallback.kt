@@ -1,14 +1,14 @@
 package com.pandecode.githubapp.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.pandecode.data.domain.model.SearchUserItem
+import com.pandecode.data.domain.model.User
 
-class SearchUserDiffCallback : DiffUtil.ItemCallback<SearchUserItem>() {
-    override fun areItemsTheSame(oldItem: SearchUserItem, newItem: SearchUserItem): Boolean {
+class SearchUserDiffCallback : DiffUtil.ItemCallback<User>() {
+    override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: SearchUserItem, newItem: SearchUserItem): Boolean {
+    override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
         return oldItem == newItem
     }
 
