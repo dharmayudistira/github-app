@@ -23,5 +23,6 @@
     <string name="no_description_message">No description</string>
     <string name="unknown_language_message">Unknown language</string>
     <string name="add_favorite_message">Added to favorite</string>
-    <string name="remove_favorite_message">Added to favorite</string>
+    <string name="remove_favorite_message">Removed from favorite</string>
+    <string name="title_favorite">Favorite</string>
 </resources>

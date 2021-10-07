@@ -50,23 +50,28 @@ class DetailUserActivity : AppCompatActivity() {
     private fun collapsingToolbarListener(selectedUser: String) {
         var isShow = true
         var scrollRange = -1
-        binding.appBarDetail.appBarDetailLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { barLayout, verticalOffset ->
-            when {
-                scrollRange == -1 -> {
-                    scrollRange = barLayout?.totalScrollRange ?: 1
-                }
+        binding
+            .appBarDetail
+            .appBarDetailLayout
+            .addOnOffsetChangedListener(
+                AppBarLayout.OnOffsetChangedListener { barLayout, verticalOffset ->
+                    when {
+                        scrollRange == -1 -> {
+                            scrollRange = barLayout?.totalScrollRange ?: 1
+                        }
 
-                scrollRange + verticalOffset == 0 -> {
-                    binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
-                    isShow = true
-                }
+                        scrollRange + verticalOffset == 0 -> {
+                            binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
+                            isShow = true
+                        }
 
-                isShow -> {
-                    binding.appBarDetail.collapsingToolbarDetail.title = " "
-                    isShow = false
+                        isShow -> {
+                            binding.appBarDetail.collapsingToolbarDetail.title = " "
+                            isShow = false
+                        }
+                    }
                 }
-            }
-        })
+            )
     }
 
     private fun setupTabLayout() {
@@ -86,9 +91,9 @@ class DetailUserActivity : AppCompatActivity() {
             isFavorite = it
 
             binding.fabFavoriteDetail.apply {
-                if(isFavorite) {
+                if (isFavorite) {
                     this.setIconFromDrawableId(R.drawable.ic_favorite_on)
-                }else {
+                } else {
                     this.setIconFromDrawableId(R.drawable.ic_favorite_off)
                 }
             }
@@ -118,8 +123,10 @@ class DetailUserActivity : AppCompatActivity() {
             ivUserAvatarDetail.loadAsCircle(data.avatarUrl)
             tvUserNameDetail.text = data.name ?: resources.getString(R.string.null_name_message)
             tvUserLoginDetail.text = data.login
-            tvUserLocationDetail.text = data.location ?: resources.getString(R.string.null_location_message)
-            tvUserCompanyDetail.text = data.company ?: resources.getString(R.string.null_company_message)
+            tvUserLocationDetail.text =
+                data.location ?: resources.getString(R.string.null_location_message)
+            tvUserCompanyDetail.text =
+                data.company ?: resources.getString(R.string.null_company_message)
             tvUserRepositoriesDetail.text = data.publicRepos.toString()
             tvUserFollowingDetail.text = data.following.toString()
             tvUserFollowerDetail.text = data.followers.toString()
@@ -135,7 +142,7 @@ class DetailUserActivity : AppCompatActivity() {
             if (isFavorite) {
                 it.showSnackbarMessage(resources.getString(R.string.remove_favorite_message))
                 viewModel.deleteFromDatabase(user)
-            }else {
+            } else {
                 it.showSnackbarMessage(resources.getString(R.string.add_favorite_message))
                 viewModel.insertToDatabase(user)
             }

@@ -30,6 +30,10 @@
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/layout/layout_header_drawer_main.xml" value="0.22" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/menu/menu_drawer_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/app/src/main/res/menu/menu_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/item_favorite.xml" value="0.25" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/layout_empty_favorite.xml" value="0.15217391304347827" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/layout_empty_search.xml" value="0.33" />
       </map>
     </option>
   </component>

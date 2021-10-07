@@ -24,4 +24,18 @@
             android:name="selectedUser"
             app:argType="string" />
     </activity>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.pandecode.githubapp.favorite.ui.FavoriteFragment"
+        app:moduleName="favorite"
+        android:label="@string/title_favorite" >
+
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailUserActivity"
+            app:destination="@id/detailUserActivity" />
+
+    </fragment>
+
+
 </navigation>

@@ -91,7 +91,7 @@ class FollowerFragment : Fragment() {
     }
 
     private fun showEmpty(state: Boolean) {
-        val message = String.format(resources.getString(R.string.empty_data_message))
+        val message = resources.getString(R.string.empty_data_message)
 
         binding?.apply {
             if (state) {
