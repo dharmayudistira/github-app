@@ -8,28 +8,34 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
 
-    //navigation component
+    // navigation component
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
-    //coil
+    // coil
     implementation "io.coil-kt:coil:$coil_version"
 
-    //viewpager2
+    // viewpager2
     implementation "androidx.viewpager2:viewpager2:$viewpager2_version"
 
-    //lottie animation
+    // lottie animation
     implementation "com.airbnb.android:lottie:$lottie_version"
 
-    //koin
+    // koin
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    //android veil
+    // android veil
     implementation "com.github.skydoves:androidveil:$veil_version"
 
-    //circle image
+    // circle image
     implementation "de.hdodenhof:circleimageview:$circle_image_version"
+
+    // preferences
+    implementation "androidx.preference:preference-ktx:$preference_version"
+
+    // datastore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 }

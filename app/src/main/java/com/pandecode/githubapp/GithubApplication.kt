@@ -4,9 +4,7 @@ import android.app.Application
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.util.CoilUtils
-import com.pandecode.data.di.databaseModule
-import com.pandecode.data.di.networkModule
-import com.pandecode.data.di.repositoryModule
+import com.pandecode.data.di.*
 import com.pandecode.githubapp.di.useCaseModule
 import com.pandecode.githubapp.di.viewModelModule
 import okhttp3.OkHttpClient
@@ -23,6 +21,7 @@ class GithubApplication : Application(), ImageLoaderFactory {
                 listOf(
                     networkModule,
                     databaseModule,
+                    preferenceModule,
                     repositoryModule,
                     useCaseModule,
                     viewModelModule

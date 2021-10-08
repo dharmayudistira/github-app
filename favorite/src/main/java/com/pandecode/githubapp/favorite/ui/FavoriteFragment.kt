@@ -27,7 +27,6 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.OnFavoriteClickCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         loadKoinModules(favoriteModule)
     }
 

@@ -25,4 +25,5 @@
     <string name="add_favorite_message">Added to favorite</string>
     <string name="remove_favorite_message">Removed from favorite</string>
     <string name="title_favorite">Favorite</string>
+    <string name="title_settings">Settings</string>
 </resources>
