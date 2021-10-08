@@ -1,6 +1,5 @@
 package com.pandecode.githubapp.utils
 
-import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import coil.imageLoader

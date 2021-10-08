@@ -11,7 +11,7 @@ import com.pandecode.data.domain.model.User
 import com.pandecode.githubapp.favorite.R
 import com.pandecode.githubapp.favorite.adapter.FavoriteAdapter
 import com.pandecode.githubapp.favorite.databinding.FragmentFavoriteBinding
-import com.pandecode.githubapp.favorite.favoriteModule
+import com.pandecode.githubapp.favorite.di.favoriteModule
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules

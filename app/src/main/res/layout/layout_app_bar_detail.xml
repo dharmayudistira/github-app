@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        app:titleEnabled="false"
         app:contentScrim="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -246,8 +247,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout_detail"
+        style="@style/TextContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/TextContent" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </com.google.android.material.appbar.AppBarLayout>

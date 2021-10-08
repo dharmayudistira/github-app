@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.dynamic-feature'
     id 'kotlin-android'
-    id 'androidx.navigation.safeargs'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 apply from: '../shared_dependencies.gradle'
@@ -43,5 +43,4 @@ android {
 dependencies {
     implementation project(":data")
     implementation project(":app")
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

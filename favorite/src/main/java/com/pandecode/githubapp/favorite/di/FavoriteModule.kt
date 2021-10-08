@@ -1,4 +1,4 @@
-package com.pandecode.githubapp.favorite
+package com.pandecode.githubapp.favorite.di
 
 import com.pandecode.githubapp.favorite.ui.FavoriteViewModel
 import org.koin.android.viewmodel.dsl.viewModel

@@ -34,9 +34,9 @@ class DetailUserActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.appBarDetail.toolbarDetail)
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        collapsingToolbarListener(args.selectedUser)
         setupTabLayout()
 
         args.selectedUser.apply {
@@ -45,33 +45,6 @@ class DetailUserActivity : AppCompatActivity() {
         }
 
         observeData()
-    }
-
-    private fun collapsingToolbarListener(selectedUser: String) {
-        var isShow = true
-        var scrollRange = -1
-        binding
-            .appBarDetail
-            .appBarDetailLayout
-            .addOnOffsetChangedListener(
-                AppBarLayout.OnOffsetChangedListener { barLayout, verticalOffset ->
-                    when {
-                        scrollRange == -1 -> {
-                            scrollRange = barLayout?.totalScrollRange ?: 1
-                        }
-
-                        scrollRange + verticalOffset == 0 -> {
-                            binding.appBarDetail.collapsingToolbarDetail.title = selectedUser
-                            isShow = true
-                        }
-
-                        isShow -> {
-                            binding.appBarDetail.collapsingToolbarDetail.title = " "
-                            isShow = false
-                        }
-                    }
-                }
-            )
     }
 
     private fun setupTabLayout() {
@@ -133,18 +106,12 @@ class DetailUserActivity : AppCompatActivity() {
         }
 
         binding.fabFavoriteDetail.setOnClickListener {
-            val user = User(
-                id = data.id,
-                avatarUrl = data.avatarUrl,
-                login = data.login
-            )
-
             if (isFavorite) {
                 it.showSnackbarMessage(resources.getString(R.string.remove_favorite_message))
-                viewModel.deleteFromDatabase(user)
+                viewModel.deleteFromDatabase(data)
             } else {
                 it.showSnackbarMessage(resources.getString(R.string.add_favorite_message))
-                viewModel.insertToDatabase(user)
+                viewModel.insertToDatabase(data)
             }
         }
     }

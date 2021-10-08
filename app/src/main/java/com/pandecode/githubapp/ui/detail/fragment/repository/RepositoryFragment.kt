@@ -1,17 +1,15 @@
 package com.pandecode.githubapp.ui.detail.fragment.repository
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.RepositoryAdapter
 import com.pandecode.githubapp.databinding.FragmentRepositoryBinding
-import com.pandecode.githubapp.ui.detail.fragment.following.FollowingFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class RepositoryFragment : Fragment() {
@@ -52,7 +50,7 @@ class RepositoryFragment : Fragment() {
         }
 
         viewModel.data.observe(requireActivity(), {
-            when(it) {
+            when (it) {
                 Resource.Empty -> {
                     showLoading(false)
                     showEmpty(true)
@@ -78,9 +76,9 @@ class RepositoryFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
         binding?.apply {
-            if(state) {
+            if (state) {
                 rvUserRepository.veil()
-            }else {
+            } else {
                 rvUserRepository.unVeil()
             }
         }
@@ -90,11 +88,11 @@ class RepositoryFragment : Fragment() {
         val message = String.format(resources.getString(R.string.empty_data_message))
 
         binding?.apply {
-            if(state) {
+            if (state) {
                 rvUserRepository.visibility = View.GONE
                 layoutEmpty.root.visibility = View.VISIBLE
                 layoutEmpty.tvMessageEmpty.text = message
-            }else {
+            } else {
                 rvUserRepository.visibility = View.VISIBLE
                 layoutEmpty.root.visibility = View.GONE
             }

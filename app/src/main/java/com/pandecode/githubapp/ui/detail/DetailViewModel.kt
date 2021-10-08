@@ -44,13 +44,25 @@ class DetailViewModel(private val useCase: GithubUseCase) : ViewModel() {
         }
     }
 
-    fun insertToDatabase(user: User) {
+    fun insertToDatabase(data: DetailUser) {
+        val user = User(
+            id = data.id,
+            avatarUrl = data.avatarUrl,
+            login = data.login
+        )
+
         viewModelScope.launch {
             useCase.insertUser(user)
         }
     }
 
-    fun deleteFromDatabase(user: User) {
+    fun deleteFromDatabase(data: DetailUser) {
+        val user = User(
+            id = data.id,
+            avatarUrl = data.avatarUrl,
+            login = data.login
+        )
+
         viewModelScope.launch {
             useCase.deleteUser(user)
         }
