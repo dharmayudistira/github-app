@@ -10,7 +10,7 @@ import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.UserAdapter
 import com.pandecode.githubapp.databinding.FragmentFollowerBinding
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FollowerFragment : Fragment() {
 

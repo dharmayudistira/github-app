@@ -1,9 +1,9 @@
 package com.pandecode.data.source.local.database
 
 import androidx.room.*
-import com.pandecode.data.source.local.database.DatabaseConstants.COL_USERNAME
+import com.pandecode.data.utils.DatabaseConstants.COL_USERNAME
 import kotlinx.coroutines.flow.Flow
-import com.pandecode.data.source.local.database.DatabaseConstants.TABLE_NAME
+import com.pandecode.data.utils.DatabaseConstants.TABLE_NAME
 
 @Dao
 interface GithubDao {

@@ -23,9 +23,8 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottie_version"
 
     // koin
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
 
     // android veil
     implementation "com.github.skydoves:androidveil:$veil_version"

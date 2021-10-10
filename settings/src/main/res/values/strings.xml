@@ -1,6 +1,5 @@
 <resources>
     <!-- Preference Titles -->
-    <string name="settings_title">Settings</string>
     <string name="themes_title">Theme</string>
 
     <!-- Theme Preferences -->

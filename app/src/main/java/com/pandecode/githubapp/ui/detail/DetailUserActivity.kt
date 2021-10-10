@@ -5,10 +5,8 @@ import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
-import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.pandecode.data.domain.model.DetailUser
-import com.pandecode.data.domain.model.User
 import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.DetailPagerAdapter
@@ -16,7 +14,7 @@ import com.pandecode.githubapp.databinding.ActivityDetailUserBinding
 import com.pandecode.githubapp.utils.loadAsCircle
 import com.pandecode.githubapp.utils.setIconFromDrawableId
 import com.pandecode.githubapp.utils.showSnackbarMessage
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailUserActivity : AppCompatActivity() {
 

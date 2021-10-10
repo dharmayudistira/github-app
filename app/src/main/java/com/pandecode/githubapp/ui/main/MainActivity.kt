@@ -2,14 +2,12 @@ package com.pandecode.githubapp.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.databinding.ActivityMainBinding
-import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {

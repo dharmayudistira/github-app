@@ -8,7 +8,7 @@ import com.pandecode.githubapp.ui.detail.fragment.following.FollowingViewModel
 import com.pandecode.githubapp.ui.detail.fragment.repository.RepositoryViewModel
 import com.pandecode.githubapp.ui.home.HomeViewModel
 import com.pandecode.githubapp.ui.splash.SplashViewModel
-import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val useCaseModule = module {

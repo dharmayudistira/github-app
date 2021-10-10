@@ -1,4 +1,4 @@
-package com.pandecode.data.source.local.database
+package com.pandecode.data.utils
 
 object DatabaseConstants {
     const val DATABASE_NAME = "github_database.db"

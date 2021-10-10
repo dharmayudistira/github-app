@@ -3,6 +3,7 @@ package com.pandecode.data.source.local.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.pandecode.data.utils.DatabaseConstants
 
 @Entity(tableName = DatabaseConstants.TABLE_NAME)
 data class UserEntity(

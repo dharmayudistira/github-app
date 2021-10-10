@@ -6,6 +6,7 @@ import com.pandecode.data.source.local.LocalDataSource
 import com.pandecode.data.source.remote.RemoteDataSource
 import com.pandecode.data.utils.DataMapper
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -17,6 +18,12 @@ class GithubRepository(
 
     override suspend fun getSearchUser(username: String) = flow {
         emit(Resource.Loading)
+
+        /*
+            Delaying for half a second to make sure
+            that loading state is visible
+         */
+        delay(500)
 
         try {
             val response = remoteDataSource.getSearchUser(username)
@@ -36,6 +43,12 @@ class GithubRepository(
     override suspend fun getDetailUser(username: String) = flow {
         emit(Resource.Loading)
 
+        /*
+            Delaying for half a second to make sure
+            that loading state is visible
+         */
+        delay(500)
+
         try {
             val data = remoteDataSource.getDetailUser(username)
             val domain = DataMapper.mapDetailResponseToDomain(data)
@@ -45,27 +58,38 @@ class GithubRepository(
         }
     }.flowOn(Dispatchers.IO)
 
-    override suspend fun getFollower(username: String) =
-        flow {
-            emit(Resource.Loading)
+    override suspend fun getFollower(username: String) = flow {
+        emit(Resource.Loading)
 
-            try {
-                val data = remoteDataSource.getFollower(username)
+        /*
+            Delaying for half a second to make sure
+            that loading state is visible
+         */
+        delay(500)
 
-                if (data.isNotEmpty()) {
-                    val domain = DataMapper.mapUserResponseToDomain(data)
-                    emit(Resource.Success(domain))
-                } else {
-                    emit(Resource.Empty)
-                }
+        try {
+            val data = remoteDataSource.getFollower(username)
 
-            } catch (e: Exception) {
-                emit(Resource.Error(e.message ?: "Something went wrong"))
+            if (data.isNotEmpty()) {
+                val domain = DataMapper.mapUserResponseToDomain(data)
+                emit(Resource.Success(domain))
+            } else {
+                emit(Resource.Empty)
             }
-        }.flowOn(Dispatchers.IO)
+
+        } catch (e: Exception) {
+            emit(Resource.Error(e.message ?: "Something went wrong"))
+        }
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun getFollowing(username: String) = flow {
         emit(Resource.Loading)
+
+        /*
+            Delaying for half a second to make sure
+            that loading state is visible
+         */
+        delay(500)
 
         try {
             val data = remoteDataSource.getFollowing(username)
@@ -84,6 +108,12 @@ class GithubRepository(
 
     override suspend fun getRepository(username: String) = flow {
         emit(Resource.Loading)
+
+        /*
+            Delaying for half a second to make sure
+            that loading state is visible
+         */
+        delay(500)
 
         try {
             val data = remoteDataSource.getRepository(username)

@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+import com.pandecode.data.utils.ThemeChanger.updateTheme
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.ui.main.MainActivity
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -26,7 +26,7 @@ class SplashScreenActivity : AppCompatActivity() {
         })
 
         viewModel.readyToIntent.observe(this, {
-            if(it) {
+            if (it) {
                 navigateToMain()
             }
         })
@@ -38,10 +38,5 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 3000)
-    }
-
-    private fun updateTheme(mode: Int) : Boolean {
-        AppCompatDelegate.setDefaultNightMode(mode)
-        return true
     }
 }

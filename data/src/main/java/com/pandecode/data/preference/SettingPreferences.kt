@@ -5,12 +5,13 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
+import com.pandecode.data.utils.PreferenceConstants.THEME_PREF_KEY
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class SettingPreferences (private val dataStore: DataStore<Preferences>) {
+class SettingPreferences(private val dataStore: DataStore<Preferences>) {
 
-    private val themeKey = intPreferencesKey("theme_setting")
+    private val themeKey = intPreferencesKey(THEME_PREF_KEY)
 
     fun getThemeSetting(): Flow<Int> {
         return dataStore.data.map { pref ->
