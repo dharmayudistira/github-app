@@ -14,8 +14,9 @@
     <string name="null_location_message">location not set yet</string>
     <string name="null_company_message">company not set yet</string>
     <string name="null_name_message">name not set yet</string>
+    <string name="null_login_message">username not set yet</string>
     <string name="repositories">Repository</string>
-    <string name="dummy_number">99</string>
+    <string name="dummy_number">0</string>
     <string name="following">Following</string>
     <string name="follower">Follower</string>
     <string name="author_repository_full_name">dharmayudistira/dharmayudistira</string>

@@ -15,6 +15,8 @@ import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.SearchUserAdapter
 import com.pandecode.githubapp.databinding.FragmentHomeBinding
+import com.pandecode.githubapp.utils.hideKeyboard
+import com.pandecode.githubapp.utils.showSnackbarMessage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
@@ -22,7 +24,11 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
 
-    private lateinit var searchAdapter: SearchUserAdapter
+    private val searchAdapter: SearchUserAdapter by lazy {
+        SearchUserAdapter().also {
+            it.setOnSearchClickCallback(this)
+        }
+    }
 
     private val viewModel: HomeViewModel by viewModel()
 
@@ -49,10 +55,6 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
     }
 
     private fun setupAdapter() {
-        searchAdapter = SearchUserAdapter().also {
-            it.setOnSearchClickCallback(this)
-        }
-
         binding?.rvUserHome?.apply {
             setAdapter(searchAdapter)
             setLayoutManager(LinearLayoutManager(binding?.root?.context))
@@ -71,6 +73,7 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     if (!query.isNullOrEmpty()) {
                         viewModel.searchUser(query)
+                        hideKeyboard()
                     }
 
                     return true
@@ -91,8 +94,9 @@ class HomeFragment : Fragment(), SearchUserAdapter.OnSearchClickCallback {
                     showEmptyResult(true)
                 }
                 is Resource.Error -> {
-                    showLoading(true)
-                    showEmptyResult(false)
+                    showLoading(false)
+                    showEmptyResult(true)
+                    binding?.root?.showSnackbarMessage(it.errorMessage)
                 }
                 Resource.Loading -> {
                     showLoading(true)

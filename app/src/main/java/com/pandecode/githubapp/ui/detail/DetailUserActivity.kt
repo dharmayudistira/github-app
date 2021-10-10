@@ -12,6 +12,7 @@ import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.DetailPagerAdapter
 import com.pandecode.githubapp.databinding.ActivityDetailUserBinding
 import com.pandecode.githubapp.utils.loadAsCircle
+import com.pandecode.githubapp.utils.loadAsCircleFromDrawable
 import com.pandecode.githubapp.utils.setIconFromDrawableId
 import com.pandecode.githubapp.utils.showSnackbarMessage
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -76,6 +77,7 @@ class DetailUserActivity : AppCompatActivity() {
                     showLoading(false)
                 }
                 is Resource.Error -> {
+                    showError(it.errorMessage)
                     showLoading(false)
                 }
                 Resource.Loading -> {
@@ -112,6 +114,21 @@ class DetailUserActivity : AppCompatActivity() {
                 viewModel.insertToDatabase(data)
             }
         }
+    }
+
+    private fun showError(message: String) {
+        binding.appBarDetail.apply {
+            ivUserAvatarDetail.loadAsCircleFromDrawable(R.drawable.ic_image_broken)
+            tvUserNameDetail.text = resources.getString(R.string.null_name_message)
+            tvUserLoginDetail.text = resources.getString(R.string.null_login_message)
+            tvUserLocationDetail.text = resources.getString(R.string.null_location_message)
+            tvUserCompanyDetail.text = resources.getString(R.string.null_company_message)
+            tvUserRepositoriesDetail.text = resources.getString(R.string.dummy_number)
+            tvUserFollowingDetail.text = resources.getString(R.string.dummy_number)
+            tvUserFollowerDetail.text = resources.getString(R.string.dummy_number)
+        }
+
+        binding.root.showSnackbarMessage(message)
     }
 
     private fun showLoading(state: Boolean) {

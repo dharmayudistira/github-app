@@ -13,7 +13,7 @@ class DetailPagerAdapter(activity: AppCompatActivity, private val username: Stri
     override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
-        return when(position) {
+        return when (position) {
             0 -> RepositoryFragment.newInstance(username)
             1 -> FollowingFragment.newInstance(username)
             else -> FollowerFragment.newInstance(username)

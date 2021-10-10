@@ -23,7 +23,11 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.OnFavoriteClickCallback {
 
     private val viewModel: FavoriteViewModel by viewModel()
 
-    private lateinit var favoriteAdapter: FavoriteAdapter
+    private val favoriteAdapter: FavoriteAdapter by lazy {
+        FavoriteAdapter().also {
+            it.setOnFavoriteClickCallback(this)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +60,6 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.OnFavoriteClickCallback {
     }
 
     private fun setupAdapter() {
-        favoriteAdapter = FavoriteAdapter().also {
-            it.setOnFavoriteClickCallback(this)
-        }
-
         binding?.rvUserFavorite?.apply {
             setAdapter(favoriteAdapter)
             setLayoutManager(GridLayoutManager(binding?.root?.context, 2))

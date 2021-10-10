@@ -10,7 +10,6 @@ import com.pandecode.data.domain.usecase.GithubUseCase
 import com.pandecode.data.source.Resource
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class DetailViewModel(private val useCase: GithubUseCase) : ViewModel() {
 
@@ -32,13 +31,13 @@ class DetailViewModel(private val useCase: GithubUseCase) : ViewModel() {
         viewModelScope.launch {
             try {
                 useCase.getUserByUsername(username).collect {
-                    if(it.isNotEmpty()) {
+                    if (it.isNotEmpty()) {
                         _isFavorite.postValue(true)
-                    }else {
+                    } else {
                         _isFavorite.postValue(false)
                     }
                 }
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 _isFavorite.postValue(false)
             }
         }

@@ -22,9 +22,9 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_user_home"
+            style="@style/TextContentSmall"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TextContentSmall" />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.card.MaterialCardView>
 

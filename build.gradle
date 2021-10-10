@@ -25,7 +25,7 @@ buildscript {
         //additional libraries for module: data
         room_version = "2.3.0"
         retrofit_version = "2.9.0"
-        logging_interceptor_version = "5.0.0-alpha.2"
+        logging_interceptor_version = "4.9.1"
         kotlin_coroutines_version = "1.5.2"
         lifecycle_livedata_version = "2.3.1"
     }

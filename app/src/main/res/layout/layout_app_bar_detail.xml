@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        app:titleEnabled="false"
         app:contentScrim="?attr/colorPrimary"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        app:titleEnabled="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,28 +58,28 @@
 
                     <TextView
                         android:id="@+id/tv_user_name_detail"
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/TextTitle"
-                        android:textColor="@color/white"
                         android:layout_marginStart="@dimen/medium_spacing"
                         android:layout_marginTop="@dimen/medium_spacing"
                         android:layout_marginEnd="@dimen/medium_spacing"
                         android:text="@string/author_name"
+                        android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_user_login_detail"
+                        style="@style/TextContentSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/TextContentSmall"
-                        android:textColor="@color/white"
                         android:layout_marginTop="@dimen/small_spacing"
                         android:drawablePadding="@dimen/small_spacing"
                         android:gravity="center"
                         android:text="@string/author_login"
+                        android:textColor="@color/white"
                         app:drawableStartCompat="@drawable/ic_verified"
                         app:layout_constraintEnd_toEndOf="@id/tv_user_name_detail"
                         app:layout_constraintStart_toStartOf="@id/tv_user_name_detail"
@@ -87,13 +87,13 @@
 
                     <TextView
                         android:id="@+id/tv_user_location_detail"
+                        style="@style/TextContentSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/TextContentSmall"
-                        android:textColor="@color/white"
                         android:drawablePadding="@dimen/small_spacing"
                         android:gravity="center"
                         android:text="@string/author_location"
+                        android:textColor="@color/white"
                         app:drawableStartCompat="@drawable/ic_location"
                         app:layout_constraintEnd_toEndOf="@+id/tv_user_login_detail"
                         app:layout_constraintStart_toStartOf="@+id/tv_user_login_detail"
@@ -101,13 +101,13 @@
 
                     <TextView
                         android:id="@+id/tv_user_company_detail"
+                        style="@style/TextContentSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/TextContentSmall"
-                        android:textColor="@color/white"
                         android:drawablePadding="@dimen/small_spacing"
                         android:gravity="center"
                         android:text="@string/author_company"
+                        android:textColor="@color/white"
                         app:drawableStartCompat="@drawable/ic_company"
                         app:layout_constraintEnd_toEndOf="@id/tv_user_location_detail"
                         app:layout_constraintStart_toStartOf="@id/tv_user_location_detail"
@@ -120,8 +120,8 @@
                         android:layout_marginTop="@dimen/small_spacing"
                         android:layout_marginEnd="@dimen/large_spacing"
                         android:layout_marginBottom="@dimen/small_spacing"
-                        app:cardElevation="@dimen/small_spacing"
                         app:cardCornerRadius="@dimen/medium_spacing"
+                        app:cardElevation="@dimen/small_spacing"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -137,9 +137,9 @@
 
                             <TextView
                                 android:id="@+id/textView6"
+                                style="@style/TextContent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContent"
                                 android:layout_marginTop="@dimen/small_spacing"
                                 android:text="@string/repositories"
                                 app:layout_constraintEnd_toStartOf="@+id/divider"
@@ -148,9 +148,9 @@
 
                             <TextView
                                 android:id="@+id/tv_user_repositories_detail"
+                                style="@style/TextContentSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContentSmall"
                                 android:text="@string/dummy_number"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/divider"
@@ -185,9 +185,9 @@
 
                             <TextView
                                 android:id="@+id/textView8"
+                                style="@style/TextContent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContent"
                                 android:layout_marginTop="@dimen/small_spacing"
                                 android:text="@string/following"
                                 app:layout_constraintEnd_toStartOf="@+id/divider2"
@@ -196,9 +196,9 @@
 
                             <TextView
                                 android:id="@+id/tv_user_following_detail"
+                                style="@style/TextContentSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContentSmall"
                                 android:text="@string/dummy_number"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/divider2"
@@ -207,9 +207,9 @@
 
                             <TextView
                                 android:id="@+id/textView9"
+                                style="@style/TextContent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContent"
                                 android:layout_marginTop="@dimen/small_spacing"
                                 android:text="@string/follower"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -218,9 +218,9 @@
 
                             <TextView
                                 android:id="@+id/tv_user_follower_detail"
+                                style="@style/TextContentSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/TextContentSmall"
                                 android:text="@string/dummy_number"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"

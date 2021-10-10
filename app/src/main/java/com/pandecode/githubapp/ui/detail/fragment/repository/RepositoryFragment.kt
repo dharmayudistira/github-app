@@ -10,6 +10,7 @@ import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.RepositoryAdapter
 import com.pandecode.githubapp.databinding.FragmentRepositoryBinding
+import com.pandecode.githubapp.utils.showSnackbarMessage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RepositoryFragment : Fragment() {
@@ -17,7 +18,9 @@ class RepositoryFragment : Fragment() {
     private var _binding: FragmentRepositoryBinding? = null
     private val binding get() = _binding
 
-    private lateinit var repositoryAdapter: RepositoryAdapter
+    private val repositoryAdapter: RepositoryAdapter by lazy {
+        RepositoryAdapter()
+    }
 
     private val viewModel: RepositoryViewModel by viewModel()
 
@@ -41,8 +44,6 @@ class RepositoryFragment : Fragment() {
             viewModel.getRepository(it)
         }
 
-        repositoryAdapter = RepositoryAdapter()
-
         binding?.rvUserRepository?.apply {
             setAdapter(repositoryAdapter)
             setLayoutManager(LinearLayoutManager(binding?.root?.context))
@@ -57,7 +58,8 @@ class RepositoryFragment : Fragment() {
                 }
                 is Resource.Error -> {
                     showLoading(false)
-                    showEmpty(false)
+                    showEmpty(true)
+                    binding?.root?.showSnackbarMessage(it.errorMessage)
                 }
                 Resource.Loading -> {
                     showLoading(true)

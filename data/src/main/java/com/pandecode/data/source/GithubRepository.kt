@@ -19,10 +19,7 @@ class GithubRepository(
     override suspend fun getSearchUser(username: String) = flow {
         emit(Resource.Loading)
 
-        /*
-            Delaying for half a second to make sure
-            that loading state is visible
-         */
+        // Delaying for half a second to make sure that loading state is visible
         delay(500)
 
         try {
@@ -43,10 +40,7 @@ class GithubRepository(
     override suspend fun getDetailUser(username: String) = flow {
         emit(Resource.Loading)
 
-        /*
-            Delaying for half a second to make sure
-            that loading state is visible
-         */
+        // Delaying for half a second to make sure that loading state is visible
         delay(500)
 
         try {
@@ -61,10 +55,7 @@ class GithubRepository(
     override suspend fun getFollower(username: String) = flow {
         emit(Resource.Loading)
 
-        /*
-            Delaying for half a second to make sure
-            that loading state is visible
-         */
+        // Delaying for half a second to make sure that loading state is visible
         delay(500)
 
         try {
@@ -85,10 +76,7 @@ class GithubRepository(
     override suspend fun getFollowing(username: String) = flow {
         emit(Resource.Loading)
 
-        /*
-            Delaying for half a second to make sure
-            that loading state is visible
-         */
+        // Delaying for half a second to make sure that loading state is visible
         delay(500)
 
         try {
@@ -109,10 +97,7 @@ class GithubRepository(
     override suspend fun getRepository(username: String) = flow {
         emit(Resource.Loading)
 
-        /*
-            Delaying for half a second to make sure
-            that loading state is visible
-         */
+        // Delaying for half a second to make sure that loading state is visible
         delay(500)
 
         try {

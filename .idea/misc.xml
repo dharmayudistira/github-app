@@ -34,7 +34,17 @@
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/item_favorite.xml" value="0.25" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/layout_empty_favorite.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/GithubApp/favorite/src/main/res/layout/layout_empty_search.xml" value="0.33" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/activity_detail_user.xml" value="0.10916919959473151" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/fragment_follower.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/fragment_following.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/fragment_repository.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/item_search.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/item_user.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/layout_app_bar_detail.xml" value="0.10916919959473151" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/layout_empty_search.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/layout/layout_header_drawer_main.xml" value="0.17753623188405798" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/app/src/main/res/menu/menu_drawer_main.xml" value="0.13425925925925927" />
+        <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/favorite/src/main/res/layout/layout_empty_favorite.xml" value="0.17753623188405798" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/settings/src/main/res/layout/fragment_setting.xml" value="0.1213768115942029" />
         <entry key="..\:/Users/dharm/AndroidStudioProjects/github-app/settings/src/main/res/xml/root_preferences.xml" value="0.22" />
       </map>

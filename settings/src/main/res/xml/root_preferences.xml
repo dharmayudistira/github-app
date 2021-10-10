@@ -8,7 +8,7 @@
             app:entryValues="@array/theme_array_value"
             app:key="@string/pref_key_theme"
             app:title="@string/theme_pref_title"
-            app:useSimpleSummaryProvider="true"/>
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 

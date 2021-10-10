@@ -33,6 +33,6 @@ interface GithubApiService {
     @GET("users/{login}/repos")
     suspend fun getRepository(
         @Path("login") login: String
-    ) : List<RepositoryResponse>
+    ): List<RepositoryResponse>
 
 }

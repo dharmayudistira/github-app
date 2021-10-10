@@ -28,8 +28,8 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.pandecode.githubapp.favorite.ui.FavoriteFragment"
-        app:moduleName="favorite"
-        android:label="@string/title_favorite" >
+        android:label="@string/title_favorite"
+        app:moduleName="favorite">
 
         <action
             android:id="@+id/action_favoriteFragment_to_detailUserActivity"
@@ -40,8 +40,8 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.pandecode.githubapp.settings.ui.SettingsFragment"
-        app:moduleName="settings"
-        android:label="@string/title_settings" />
+        android:label="@string/title_settings"
+        app:moduleName="settings" />
 
 
 </navigation>

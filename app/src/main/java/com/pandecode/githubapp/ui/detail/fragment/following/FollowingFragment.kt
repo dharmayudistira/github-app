@@ -10,6 +10,7 @@ import com.pandecode.data.source.Resource
 import com.pandecode.githubapp.R
 import com.pandecode.githubapp.adapter.UserAdapter
 import com.pandecode.githubapp.databinding.FragmentFollowingBinding
+import com.pandecode.githubapp.utils.showSnackbarMessage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FollowingFragment : Fragment() {
@@ -19,7 +20,9 @@ class FollowingFragment : Fragment() {
 
     private val viewModel: FollowingViewModel by viewModel()
 
-    private lateinit var userAdapter: UserAdapter
+    private val userAdapter: UserAdapter by lazy {
+        UserAdapter()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,8 +49,6 @@ class FollowingFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        userAdapter = UserAdapter()
-
         binding?.rvUserFollowing?.apply {
             setAdapter(userAdapter)
             setLayoutManager(LinearLayoutManager(binding?.root?.context))
@@ -65,6 +66,7 @@ class FollowingFragment : Fragment() {
                 is Resource.Error -> {
                     showLoading(false)
                     showEmpty(true)
+                    binding?.root?.showSnackbarMessage(it.errorMessage)
                 }
                 Resource.Loading -> {
                     showLoading(true)

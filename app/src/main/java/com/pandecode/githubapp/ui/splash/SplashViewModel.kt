@@ -1,6 +1,9 @@
 package com.pandecode.githubapp.ui.splash
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.pandecode.data.preference.SettingPreferences
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
