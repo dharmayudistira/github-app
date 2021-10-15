@@ -2,9 +2,13 @@
 
 [![Platform](https://img.shields.io/badge/platform-Android-green)](https://github.com/dharmayudistira/github-app/blob/master/app/build.gradle)
 [![Language](https://img.shields.io/badge/language-Kotlin-blue)](https://github.com/dharmayudistira/github-app/blob/master/app/build.gradle)
-[![MinSdk](https://img.shields.io/badge/minsdk-23-red)](https://github.com/dharmayudistira/github-app/blob/master/app/build.gradle)
+[![MinSdk](https://img.shields.io/badge/minsdk-21-red)](https://github.com/dharmayudistira/github-app/blob/master/app/build.gradle)
 
 > <b>Warning</b>:  Please be wise to clone and learn the flow of the app. You are not allowed to copy/create derivatives/steal/sell this program codes. I am not responsible for anything that happens if you get plagiarized / suspended by [Dicoding](https://www.dicoding.com).
+
+<p align="center">
+    <img src="assets_readme/img_overview_app.png"/>
+</p>
 
 <p align="center">
     <img src="assets_readme/img_mad_score.png"/>

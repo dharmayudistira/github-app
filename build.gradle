@@ -18,6 +18,7 @@ buildscript {
         viewpager2_version = "1.0.0"
         lottie_version = "4.1.0"
         koin_version = "3.1.2"
+        circle_image_version = "3.1.0"
         veil_version = "1.1.1"
         preference_version = "1.1.1"
         datastore_version = "1.0.0"
