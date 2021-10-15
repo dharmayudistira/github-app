@@ -29,12 +29,9 @@ dependencies {
     // android veil
     implementation "com.github.skydoves:androidveil:$veil_version"
 
-    // circle image
-    implementation "de.hdodenhof:circleimageview:$circle_image_version"
-
     // preferences
     implementation "androidx.preference:preference-ktx:$preference_version"
 
     // datastore
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
 }
