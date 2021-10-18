@@ -61,6 +61,11 @@ GITHUB_API_KEY="<<REPLACE WITH YOUR GITHUB TOKEN>>"
   - [Coil](https://coil-kt.github.io/coil/) - image loader 
 
 ## What's next ?
-- [ ] Feature : Reminder using work manager
-- [ ] Feature : Stack widget
-- [ ] Add testing
+- Feature
+  - [ ] Reminder using work manager
+  - [ ] Localization for english - indonesia
+  - [ ] Login
+- App
+  - [ ] Migrate to moshi converter
+  - [ ] Implement pagination using Paging 3
+  - [ ] Add CI using circleCI
