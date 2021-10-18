@@ -60,3 +60,7 @@ GITHUB_API_KEY="<<REPLACE WITH YOUR GITHUB TOKEN>>"
   - [Lottie Animation](https://github.com/airbnb/lottie-android) - cool & smooth animation 
   - [Coil](https://coil-kt.github.io/coil/) - image loader 
 
+## What's next ?
+- [ ] Feature : Reminder using work manager
+- [ ] Feature : Stack widget
+- [ ] Add testing
