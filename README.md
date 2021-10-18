@@ -19,6 +19,8 @@ Generate your github token [here](https://github.com/settings/tokens) and replac
 ```kotlin
 GITHUB_API_KEY="<<REPLACE WITH YOUR GITHUB TOKEN>>"
 ```
+## How to contribute
+I am open for everyone that wants to improve this app. Feel free to pull-req this repository or you can contact me personally via email *dharmayudistira2000@gmail.com*
 
 ## Features
 - Search User
